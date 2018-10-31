@@ -56,7 +56,6 @@ public class JiffleRepository {
                 @Override
                 public void onResponse(Call<List<Events>> call, Response<List<Events>> response) {
                     if (response.body() != null && response.code() == 200) {
-                        Log.e("kjdk s", response.message());
                         data.setValue(response.body());
                         meventDao.saveMovies(response.body());
                     }
@@ -64,7 +63,6 @@ public class JiffleRepository {
 
                 @Override
                 public void onFailure(Call<List<Events>> call, Throwable t) {
-                    Log.e("kjdk s", call.toString());
                     data.setValue(null);
                 }
             });
