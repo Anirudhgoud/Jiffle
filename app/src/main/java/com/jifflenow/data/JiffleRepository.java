@@ -3,8 +3,6 @@ package com.jifflenow.data;
 import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.MutableLiveData;
 import android.content.Context;
-import android.os.AsyncTask;
-import android.util.Log;
 
 import com.jifflenow.data.local.EventDatabase;
 import com.jifflenow.data.local.dao.EventsDao;
@@ -63,6 +61,7 @@ public class JiffleRepository {
 
                 @Override
                 public void onFailure(Call<List<Events>> call, Throwable t) {
+
                     data.setValue(null);
                 }
             });
